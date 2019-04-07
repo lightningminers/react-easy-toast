@@ -1,1 +1,2 @@
-# react-simple-toast
+# React Simple Toast
+
