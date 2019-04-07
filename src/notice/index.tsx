@@ -4,8 +4,8 @@ import styles from "./style.css";
 
 export type CloseCallback = () => void;
 
-type NoticeType = "show" | "message" | "error" | "ok" | "warning";
-type NoticeContent = string | React.ReactNode;
+export type NoticeType = "show" | "message" | "error" | "ok" | "warning";
+export type NoticeContent = string | React.ReactNode;
 
 export interface INoticeProps {
   key?: string;

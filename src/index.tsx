@@ -1,10 +1,10 @@
 import { DEFAULT_DURATION } from "./utils";
 import Notification from "./notification";
-import { CloseCallback } from "./notice";
+import { CloseCallback, NoticeContent  } from "./notice";
 
 const notification = Notification.shareInstance();
 
-export const message = (content: string, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
+export const message = (content: NoticeContent, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
   notification.add({
     content,
     duration,
@@ -13,7 +13,7 @@ export const message = (content: string, duration = DEFAULT_DURATION, onClose?: 
   });
 }
 
-export const ok = (content: string, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
+export const ok = (content: NoticeContent, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
   notification.add({
     content,
     duration,
@@ -22,7 +22,7 @@ export const ok = (content: string, duration = DEFAULT_DURATION, onClose?: Close
   });
 }
 
-export const error = (content: string, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
+export const error = (content: NoticeContent, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
   notification.add({
     content,
     duration,
@@ -31,7 +31,7 @@ export const error = (content: string, duration = DEFAULT_DURATION, onClose?: Cl
   });
 }
 
-export const warning = (content: string, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
+export const warning = (content: NoticeContent, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
   notification.add({
     content,
     duration,
@@ -40,7 +40,7 @@ export const warning = (content: string, duration = DEFAULT_DURATION, onClose?: 
   });
 }
 
-export const show = (content: string, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
+export const show = (content: NoticeContent, duration = DEFAULT_DURATION, onClose?: CloseCallback) => {
   notification.add({
     content,
     duration,
