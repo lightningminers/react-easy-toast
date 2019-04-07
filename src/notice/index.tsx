@@ -5,14 +5,16 @@ import styles from "./style.css";
 
 export type Close = () => void;
 
+type NoticeType = "message" | "error" | "info" | "warning"
+
 export interface INoticeProps {
   key?: string;
   duration: number;
   content: any;
   onClose?: Close;
-  type: "message"
+  type: NoticeType
 }
-
+ 
 const Notice = (props: INoticeProps) => {
   React.useEffect(() => {
     const timer = setTimeout(() => {
