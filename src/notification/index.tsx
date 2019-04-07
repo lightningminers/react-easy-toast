@@ -2,20 +2,17 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import createUUID from "usedjs/lib/createUUID";
 import styles from "./style.css";
+import Notice, { INoticeProps } from "../notice";
 
 interface IProps {}
 interface IState {
   notices: any[];
 }
 
-interface INotice {
-  key?: string;
-}
-
 interface IShareInstance {
   destroy: () => void;
   remove: (key: string) => void;
-  add: () => void;
+  add: (notice: INoticeProps) => void;
 }
 
 let shareNotificationInstance: IShareInstance | undefined;
@@ -25,18 +22,17 @@ export default class Notification extends React.Component<IProps, IState> {
   static shareInstance(){
     if (!shareNotificationInstance) {
       const div = document.createElement('div');
-      div.setAttribute('class', styles["container"]);
       document.body.appendChild(div);
-      ReactDOM.render(
+      const notification = ReactDOM.render(
         <Notification />,
         div
-      );
+      ) as any;
       shareNotificationInstance = {
-        add(){
-  
+        add(notice: INoticeProps){
+          notification.add(notice);
         },
         remove(key: string){
-  
+          notification.remove(key);
         },
         destroy(){
           ReactDOM.unmountComponentAtNode(div);
@@ -55,7 +51,7 @@ export default class Notification extends React.Component<IProps, IState> {
     }
   }
 
-  add(notice: INotice){
+  add(notice: INoticeProps){
     const { notices } = this.state;
     const key = notice.key !== undefined ? notice.key : createUUID();
     notice.key = key;
@@ -74,10 +70,25 @@ export default class Notification extends React.Component<IProps, IState> {
     });
   }
 
-  render(){
+  getNotice(notices: INoticeProps[]){
     return (
       <>
-        1234
+      {
+        notices.map((v) => {
+          return (
+            <Notice {...v}/>
+          )
+        })
+      }
+      </>
+    )
+  }
+
+  render(){
+    const { notices } = this.state;
+    return (
+      <>
+        {this.getNotice(notices)}
       </>
     )
   }

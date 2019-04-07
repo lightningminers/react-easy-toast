@@ -5,9 +5,14 @@ import * as toast from "../lib";
 console.log(toast);
 
 class App extends React.Component{
+  onToast(key){
+    toast[key]("你好");
+  }
   render(){
     return (
-      <div>1234</div>
+      <div className="container">
+        <button onClick={this.onToast.bind(this, "message")}>message</button>
+      </div>
     );
   }
 }

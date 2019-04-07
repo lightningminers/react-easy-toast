@@ -6,4 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
+}
+
+.notice-container{
+  padding: 5px 15px 5px 15px;
+  font-size: 12px;
+  background: #24292e;
+  color: #ffffff;
 }

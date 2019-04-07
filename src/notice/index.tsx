@@ -1,12 +1,16 @@
 import * as React from "react";
+import * as colors from "../colors";
+import styles from "./style.css";
 
 
 export type Close = () => void;
 
-interface INoticeProps {
+export interface INoticeProps {
+  key?: string;
   duration: number;
   content: any;
   onClose?: Close;
+  type: "message"
 }
 
 const Notice = (props: INoticeProps) => {
@@ -23,8 +27,8 @@ const Notice = (props: INoticeProps) => {
     }
   });
   return (
-    <div>
-      { props.content }
+    <div className={styles["container"]}>
+      <div className={styles["notice-container"]}>{ props.content }</div>
     </div>
   );
 }
