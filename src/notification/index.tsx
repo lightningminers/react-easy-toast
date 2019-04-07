@@ -1,12 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import createUUID from "usedjs/lib/createUUID";
-import styles from "./style.css";
 import Notice, { INoticeProps } from "../notice";
 
 interface IProps {}
 interface IState {
-  notices: any[];
+  notices: INoticeProps[];
 }
 
 interface IShareInstance {
