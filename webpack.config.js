@@ -8,7 +8,7 @@ var ROOT = path.resolve(__dirname);
 const MODE = process.env.MODE;
 const plugins = [];
 const config = {
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
   output: {
     path: ROOT + '/lib',
     filename: 'index.js',

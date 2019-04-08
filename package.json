@@ -1,6 +1,6 @@
 {
-  "name": "react-simple-toast",
-  "version": "1.0.0",
+  "name": "react-easy-toast",
+  "version": "1.0.2",
   "description": "",
   "main": "/lib/index.js",
   "directories": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/icepy/react-simple-toast.git"
+    "url": "git+https://github.com/icepy/react-easy-toast.git"
   },
   "keywords": [
     "toast",
@@ -26,9 +26,9 @@
   "author": "icepy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/icepy/react-simple-toast/issues"
+    "url": "https://github.com/icepy/react-easy-toast/issues"
   },
-  "homepage": "https://github.com/icepy/react-simple-toast#readme",
+  "homepage": "https://github.com/icepy/react-easy-toast#readme",
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^2.1.1",
@@ -46,5 +46,6 @@
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.8.3",
     "usedjs": "^1.0.2"
-  }
+  },
+  "types": "./lib/index.d.ts"
 }

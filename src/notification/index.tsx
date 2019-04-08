@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import styles from "./style.css";
 import createUUID from "usedjs/lib/createUUID";
 import Notice, { INoticeProps } from "../notice";
 
@@ -20,7 +21,8 @@ export default class Notification extends React.Component<IProps, IState> {
 
   static shareInstance(){
     if (!shareNotificationInstance) {
-      const div = document.createElement('div');
+      const div = document.createElement("div");
+      div.setAttribute("class", styles["toast-container"]);
       document.body.appendChild(div);
       const notification = ReactDOM.render(
         <Notification />,
@@ -55,6 +57,13 @@ export default class Notification extends React.Component<IProps, IState> {
     const key = notice.key !== undefined ? notice.key : createUUID();
     notice.key = key;
     const is = notices.some(v => v.key === key);
+    const onClose = notice.onClose;
+    notice.onClose = () => {
+      this.remove(key);
+      if (onClose) {
+        onClose();
+      }
+    }
     if (!is) {
       notices.push(notice);
       this.setState({
