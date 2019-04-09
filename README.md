@@ -1,6 +1,6 @@
 # React Easy Toast
 
-![img](https://img.shields.io/github/license/icepy/react-easy-toast.svg) ![img](https://img.shields.io/github/last-commit/icepy/react-easy-toast.svg)
+![img](https://img.shields.io/github/license/icepy/react-easy-toast.svg) ![img](https://img.shields.io/github/last-commit/icepy/react-easy-toast.svg) ![img](https://img.shields.io/npm/v/react-easy-toast.svg)
 
 可快速简单使用的 React Toast 组件
 
